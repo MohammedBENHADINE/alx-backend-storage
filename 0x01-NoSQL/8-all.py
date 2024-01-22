@@ -3,4 +3,8 @@
 
 
 def list_all(mongo_collection):
-    return mongo_collection.find()
+    docs = mongo_collection.find()
+    if docs:
+        return docs
+    else:
+        return []
