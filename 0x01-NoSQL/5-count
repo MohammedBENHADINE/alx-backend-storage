@@ -1,0 +1,2 @@
+//count docs in collection
+db.school.count()
