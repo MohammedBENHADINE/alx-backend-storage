@@ -1,0 +1,2 @@
+// script to insert a doc in col
+db.school.insert({"name": "Holberton school"})
