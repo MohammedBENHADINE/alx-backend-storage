@@ -3,8 +3,5 @@
 
 
 def list_all(mongo_collection):
-    docs = mongo_collection.find()
-    if docs:
-        return docs
-    else:
-        return []
+    """a Python function that lists all documents in a collection"""
+    return mongo_collection.find()
