@@ -2,6 +2,7 @@
 """create class to instantiate redis"""
 import redis
 import uuid
+from typing import Union
 
 
 class Cache:
@@ -12,8 +13,8 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb
 
-    def store(self, data):
+    def store(self, data: Union[str, bytes, int, float]) -> str:
         """store in redis"""
-        key = uuid.uuid4()
-        self._redis.set(str(key), str(data) if isinstance(data, str) else data)
-        return str(key)
+        key = str(uuid.uuid4())
+        self._redis.set(key, data)
+        return key
